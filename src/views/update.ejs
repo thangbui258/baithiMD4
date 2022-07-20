@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Add Employee</title>
+</head>
+<body>
+<h2>Add Employee</h2>
+<form action="/nhanvien/update" method="post">
+    <input type="text" name="_id" value="<%=data.nhanvien._id%>">
+    <p>maNV</p>
+    <input type="text" name="maNV" value="<%=data.nhanvien.maNV%>">
+
+    <p>name</p>
+    <input type="text" name="name" value="<%=data.nhanvien.name%>">
+
+    <p>age</p>
+    <input type="text" name="age" value="<%=data.nhanvien.age%>">
+
+    <p>salary</p>
+    <input type="text" name="salary" value="<%=data.nhanvien.salary%>">
+
+    <p>branch</p>
+    <select name="branch">
+        <% data.branchs.forEach((item)=>{ %>
+        <option value="<%= item._id %>"> <%= item.name %> </option>
+        <% }) %>
+    </select>
+    <p><button type="submit">update</button></p>
+
+</form>
+</body>
+</html>
